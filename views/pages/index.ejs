@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title  %>
+    </title>
+</head>
+
+<body>
+    <h1>File Upload for Everything</h1>
+
+    <form method="POST" action="http://localhost:5000/" enctype="multipart/form-data">
+        <input type="file" name="avatar" multiple />
+        <input type="submit" value="Upload" />
+    </form>
+
+    <br><br><br>
+    <div id="upload-details">
+        <h3>Upload Details</h3>
+        <img src="<%= `http://localhost:5000/uploads/`+url %> " alt="">
+        <p>
+            name:
+            <%= name %>
+        </p>
+        <p>
+            Size:
+            <%= size %>
+        </p>
+        <p>
+            Format:
+            <%= type  %>
+        </p>
+        <p>
+            Path:
+            <a href="<%= `http://localhost:5000/uploads/`+url %>">
+                See Full Upload Photo
+            </a>
+        </p>
+    </div>
+</body>
+
+</html>
